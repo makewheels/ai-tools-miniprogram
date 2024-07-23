@@ -1,0 +1,3 @@
+<view class="button-container">
+  <button class="button" bindtap="navigateToPage1">页面1</button>
+</view>
