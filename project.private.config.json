@@ -3,7 +3,8 @@
   "projectname": "ai-tools-miniprogram",
   "setting": {
     "compileHotReLoad": false,
-    "urlCheck": false
+    "urlCheck": false,
+    "lazyloadPlaceholderEnable": false
   },
   "libVersion": "development"
 }

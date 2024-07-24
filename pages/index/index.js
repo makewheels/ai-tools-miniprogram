@@ -1,5 +1,4 @@
-// app.js
-App({
+Page({
   navigateToEat() {
     wx.navigateTo({
       url: '/pages/eat/eat'

@@ -1,13 +1,23 @@
-const { get, post } = require('./pages/utils/request.js')
+const request = require('./pages/utils/request.js')
 
 App({
   onShow(options) {
-    this.login();
+    // this.login();
   },
 
   login() {
-    get('/healthCheck')
-      .then(data => console.log(data))
+    var token = wx.getStorageSync('token')
+    if(!token){
+      this.wechatLogin()
+    }
   },
+
+  wechatLogin(){
+    wx.login({
+      success: (res) => {
+      
+      },
+    })
+  }
 
 });
