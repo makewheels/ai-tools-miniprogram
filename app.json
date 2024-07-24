@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/food/food",
     "pages/index/index",
-    "pages/me/me",
-    "pages/eat/eat"
+    "pages/me/me"
   ],
   "window": {
     "navigationBarTextStyle": "black",

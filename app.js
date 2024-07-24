@@ -1,7 +1,7 @@
 const request = require('./pages/utils/request.js')
 
 App({
-  onShow(options) {
+  onLaunch(options) {
     this.login();
   },
 

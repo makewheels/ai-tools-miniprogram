@@ -1,9 +1,8 @@
-<!-- index.wxml -->
 <view class="container">
   <view class="content">
     <view class="description">
       <icon type="info" size="40" color="#666"></icon>
-      <text>点击按钮上传一张您的午餐照片。\n我会分析并给出营养建议。\n方便您了解饮食状况,为健康生活助力!</text>
+      <text>上传一张您的午餐照片，\n我会分析并给出营养建议</text>
     </view>
     <view class="upload-container">
       <view class="upload-btn" bindtap="chooseImage">
