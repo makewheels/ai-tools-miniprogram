@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/eat/eat"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "AI工具包",
     "navigationBarBackgroundColor": "#ffffff"
   },
   "style": "v2",

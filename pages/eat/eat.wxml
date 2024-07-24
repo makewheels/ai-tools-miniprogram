@@ -1,0 +1,19 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="content">
+    <view class="description">
+      <icon type="info" size="40" color="#666"></icon>
+      <text>点击按钮上传一张您的午餐照片。\n我会分析并给出营养建议。\n方便您了解饮食状况,为健康生活助力!</text>
+    </view>
+    <view class="upload-container">
+      <view class="upload-btn" bindtap="chooseImage">
+        <text>上传我的午餐图片</text>
+      </view>
+      <view class="upload-tip" wx:if="{{uploadTip}}">{{uploadTip}}</view>
+    </view>
+    <view class="result-container" wx:if="{{resultMarkdown}}">
+      <view class="result-title">营养分析结果</view>
+      <rich-text nodes="{{resultMarkdown}}"></rich-text>
+    </view>
+  </view>
+</view>

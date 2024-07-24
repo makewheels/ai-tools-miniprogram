@@ -7,10 +7,12 @@
 
 .button {
   width: 200rpx;
-  height: 60rpx;
-  line-height: 60rpx;
-  background-color: #07c160; /* 绿色 */
+  height: 100rpx;
+  background-color: #07c160;
   color: #fff;
   border-radius: 6rpx;
   margin-bottom: 20rpx;
+  display: flex; /* 添加 display: flex */
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
 }
