@@ -2,7 +2,7 @@
   <view class="content">
     <view class="description">
       <icon type="info" size="40" color="#666"></icon>
-      <text>上传一张您的午餐照片，\n我会分析并给出营养建议</text>
+      <text>上传一张您的午餐照片，\n我会分析并给出营养建议。\n大约需要15秒，请耐心等待</text>
     </view>
     <view class="upload-container">
       <view class="upload-btn" bindtap="chooseImage">
@@ -11,8 +11,7 @@
       <view class="upload-tip" wx:if="{{uploadTip}}">{{uploadTip}}</view>
     </view>
     <view class="result-container" wx:if="{{resultMarkdown}}">
-      <view class="result-title">营养分析结果</view>
-      <rich-text nodes="{{resultMarkdown}}"></rich-text>
+      <towxml nodes="{{resultMarkdown}}"/>
     </view>
   </view>
 </view>

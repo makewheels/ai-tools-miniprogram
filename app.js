@@ -1,6 +1,8 @@
 const request = require('./pages/utils/request.js')
 
 App({
+  towxml:require('/towxml/index'),
+  
   onLaunch(options) {
     this.login();
   },
