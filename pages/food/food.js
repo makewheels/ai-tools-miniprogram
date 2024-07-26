@@ -3,7 +3,8 @@ const towxml = require('../../towxml/index.js')
 
 Page({
   data: {
-    resultMarkdown: {}
+    resultMarkdown: {},
+    imageUrl: ''
   },
 
   chooseImage() {
@@ -62,6 +63,10 @@ Page({
     .then(response => {
       this.startTask(data);
     })
+    // 显示图片
+    // var url = request.getApiUrl() + '/file/access?fileId=' + fileId
+    // console.log(url)
+    // this.setData({imageUrl: url})
   },
 
   // 发起识别
