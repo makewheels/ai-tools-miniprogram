@@ -2,7 +2,7 @@
   <view class="content">
     <view class="description">
       <icon type="info" size="40" color="#666"></icon>
-      <text>上传一张您的午餐照片，\n我会分析并给出营养建议。\n大约需要15秒，请耐心等待</text>
+      <text>上传您的午餐照片，我会分析并给出营养建议。请耐心等待15秒</text>
     </view>
     <view class="upload-container">
       <view class="upload-btn" bindtap="chooseImage">
