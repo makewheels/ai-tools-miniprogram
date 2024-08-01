@@ -75,7 +75,7 @@ Page({
   // 发起识别
   startTask(data){
     var taskId = data.id
-    request.get('/food/startTask2?taskId=' + taskId)
+    request.get('/food/startTask?taskId=' + taskId)
     .then(response => {
       this.loopResult(taskId)
     })
