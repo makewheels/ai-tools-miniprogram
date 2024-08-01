@@ -1,3 +1,4 @@
+
 <view class="container">
   <view class="content">
     <view class="description">
@@ -8,11 +9,10 @@
       <view class="upload-btn" bindtap="chooseImage">
         <text>上传我的午餐照片</text>
       </view>
+      <image src="{{imageUrl}}" mode="aspectFit" />
     </view>
-    
     <view class="result-container" wx:if="{{resultMarkdown}}">
-      <towxml nodes="{{resultMarkdown}}"/>
+      <towxml nodes="{{resultMarkdown}}" />
     </view>
   </view>
 </view>
-<image src="" />

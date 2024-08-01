@@ -1,7 +1,7 @@
 Page({
-  navigateToEat() {
+  navigateToFood() {
     wx.navigateTo({
-      url: '/pages/eat/eat'
+      url: '/pages/food/food'
     })
-  },
+  }
 });

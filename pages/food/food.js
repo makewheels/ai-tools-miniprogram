@@ -20,6 +20,9 @@ Page({
     
   // 新建任务
   createTask(filePath) {
+    wx.showLoading({
+      title: '上传中',
+    })
     var extension = filePath.split('.').pop();
     request.get('/food/createTask?extension=' + extension)
         .then(response => {
@@ -39,7 +42,7 @@ Page({
   // 上传文件
   // 阿里云小程序上传对象存储文档 https://help.aliyun.com/zh/oss/use-cases/use-wechat-mini-programs-to-upload-objects
   uploadFile(data, credentials, filePath){
-    wx.uploadFile({ 
+    wx.uploadFile({
       url: 'https://' + credentials.bucket + "." + credentials.endpoint,
       filePath: filePath,
       name: 'file',
@@ -64,15 +67,15 @@ Page({
       this.startTask(data);
     })
     // 显示图片
-    // var url = request.getApiUrl() + '/file/access?fileId=' + fileId
-    // console.log(url)
-    // this.setData({imageUrl: url})
+    var url = request.getApiUrl() + '/file/access?fileId=' + fileId
+    console.log(url)
+    this.setData({imageUrl: url})
   },
 
   // 发起识别
   startTask(data){
     var taskId = data.id
-    request.get('/food/startTask?taskId=' + taskId)
+    request.get('/food/startTask2?taskId=' + taskId)
     .then(response => {
       this.loopResult(taskId)
     })
@@ -85,11 +88,15 @@ Page({
       if (food.status === 'FINISHED') {
         break;
       }
+      wx.showLoading({
+        title: '识别中' +(i + 1),
+      })
       const response = await request.get('/food/getById?taskId=' + taskId)
       food = response.data
-      await new Promise((resolve) => setTimeout(resolve, 1400))
+      await new Promise((resolve) => setTimeout(resolve, 1000))
     }
     // 渲染markdown https://github.com/sbfkcel/towxml
     this.setData({resultMarkdown: getApp().towxml(food.result, 'markdown')})
+    wx.hideLoading()
   }
 });

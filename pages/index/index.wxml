@@ -1,3 +1,3 @@
 <view class="button-container">
-  <button class="button" bindtap="navigateToEat">1. 健康饮食顾问</button>
+  <button class="button" bindtap="navigateToFood">1. 健康饮食顾问</button>
 </view>
