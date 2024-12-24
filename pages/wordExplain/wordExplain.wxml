@@ -1,0 +1,28 @@
+<view class="container">
+  <view>
+    <view>
+      <text class="word">{{word}}</text>
+    </view>
+    <view>
+      <text class="pronunciation">{{pronunciation}}</text>
+    </view>
+  </view>
+
+  <view class="meaning-section" wx:for="{{meanings}}" wx:key="index">
+    <view>
+      <text class="meaning">{{item.partOfSpeech}} {{item.meaningChinese}}</text>
+    </view>
+    <view>
+      <text class="example-english">{{item.exampleEnglish}}</text>
+    </view>
+    <view>
+      <text class="example-chinese">{{item.exampleChinese}}</text>
+    </view>
+    <view>
+      <image class="word-image" src="{{item.imageUrl}}" alt="Word image" />
+    </view>
+  </view>
+  <view>
+    <button class="button" bindtap="changeWord">换一换</button>
+  </view>
+</view>

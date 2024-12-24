@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/food/food",
     "pages/index/index",
-    "pages/me/me"
+    "pages/food/food",
+    "pages/me/me",
+    "pages/s",
+    "pages/wordExplain/wordExplain"
   ],
   "window": {
     "navigationBarTextStyle": "black",

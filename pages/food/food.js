@@ -40,7 +40,7 @@ Page({
   },
 
   // 上传文件
-  // 阿里云小程序上传对象存储文档 https://help.aliyun.com/zh/oss/use-cases/use-wechat-mini-programs-to-upload-objects
+  // 阿里云小程序上传对象存储文档 https://help.aliyun.com/zh/oss/use-cases/wechat-applet-uploads-files-directly-to-oss
   uploadFile(data, credentials, filePath){
     wx.uploadFile({
       url: 'https://' + credentials.bucket + "." + credentials.endpoint,

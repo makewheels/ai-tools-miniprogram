@@ -1,3 +1,4 @@
 <view class="button-container">
   <button class="button" bindtap="navigateToFood">1. 健康饮食顾问</button>
+  <button class="button" bindtap="navigateToWordExplain">2. AIGC单词释义</button>
 </view>

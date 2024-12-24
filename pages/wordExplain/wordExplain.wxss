@@ -1,0 +1,57 @@
+/* 页面整体布局 */
+.container {
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+.word {
+  font-size: 70rpx; /* 调大词汇字体大小 */
+  font-weight: bold;
+  line-height: 100rpx; /* 行高，增加词汇的间距，使其更有视觉冲击力 */
+}
+
+/* 发音部分 */
+.pronunciation {
+  font-size: 38rpx; /* 调整发音字体大小 */
+  color: #666666;
+}
+
+/* 含义部分 */
+.meaning-section {
+  margin-top: 30rpx;
+}
+
+.meaning {
+  font-size: 50rpx; /* 词性和中文含义字体大小 */
+  line-height: 100rpx;
+  color: #0035c5;
+}
+
+.example-english {
+  font-size: 40rpx;
+  line-height: 50rpx;
+}
+
+.example-chinese {
+  font-size: 40rpx;
+  color: #4a4e4d;
+  line-height: 50rpx;
+}
+
+/* 图片部分 */
+.word-image {
+  border-radius: 20rpx;
+  padding-top: 20rpx;
+}
+
+/* 换单词图片 */
+.button {
+  background-color: #6452ff; /* 设置按钮背景色为绿色 */
+  color: white; /* 设置按钮文本颜色为白色 */
+  border: none; /* 去掉边框 */
+  padding: 30rpx 30rpx; /* 设置内边距 */
+  margin-top: 20rpx;
+  border-radius: 5px; /* 设置圆角 */
+  cursor: pointer; /* 鼠标悬停时显示手形光标 */
+  font-size: 16px; /* 设置字体大小 */
+}
