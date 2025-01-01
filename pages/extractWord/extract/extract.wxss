@@ -16,3 +16,33 @@
   justify-content: center; /* 垂直居中 */
   align-items: center; /* 水平居中 */
 }
+
+.result {
+  margin-top: 40rpx;
+  padding-left: 70rpx;
+  font-size: 45rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.container {
+  padding: 20rpx;
+}
+
+.word-item {
+  font-size: 42rpx;
+  padding-top: 18rpx;
+  padding-bottom: 20rpx;
+  padding-left: 50rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.copy-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1aad19;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+}

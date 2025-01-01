@@ -1,2 +1,17 @@
 <button class="button" bindtap="chooseImage">上传手写单词图片</button>
 <image src = '{{imageUrl}}'></image>
+
+  <!-- 显示识别结果 -->
+  <view wx:if="{{isRecognized}}" class="result">
+    <text>识别结果:</text>
+  </view>
+
+<!-- 单词列表 -->
+<view class="container">
+  <scroll-view scroll-y="true">
+    <view class="word-item" wx:for="{{wordList}}" wx:key="index">{{item}}</view>
+  </scroll-view>
+</view>
+
+  <!-- 一键复制按钮 -->
+  <button  wx:if="{{isRecognized}}" class="copy-button" bindtap="onCopyClick">一键复制</button>

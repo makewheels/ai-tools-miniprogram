@@ -3,7 +3,8 @@ const request = require('../../utils/request.js')
 Page({
   data: {
     imageUrl: '',
-    resultWordList: []
+    wordList: [],
+    isRecognized: false,  // 控制识别结果显示
   },
 
   chooseImage() {
@@ -91,11 +92,13 @@ Page({
       })
       const response = await request.get('/extract/getById?taskId=' + taskId)
       task = response.data
-      await new Promise((resolve) => setTimeout(resolve, 1200))
+      await new Promise((resolve) => setTimeout(resolve, 1000))
     }
 
-    console.log(task.resultWordList)
-    this.setData({resultWordList: task.resultWordList})
+    this.setData({
+      wordList: task.resultWordList,
+      isRecognized: true
+    })
 
     wx.hideLoading()
     wx.showToast({
@@ -103,5 +106,47 @@ Page({
       icon: 'success',
       duration: 2000
     })
+  },
+
+  // 一键复制按钮的点击事件
+  onCopyClick: function() {
+    // 直接访问 this.data 获取 wordList
+    const wordList = this.data.wordList;
+
+    // 检查 wordList 是否有效并进行拼接
+    if (wordList && wordList.length > 0) {
+      let wordListString = '';
+
+      // 遍历单词列表，拼接字符串
+      for (let i = 0; i < wordList.length; i++) {
+        wordListString += wordList[i];  // 拼接单词
+        if (i < wordList.length - 1) {
+          wordListString += '\n';  // 在每个单词后加换行符，除了最后一个
+        }
+      }
+
+      // 设置剪贴板内容
+      wx.setClipboardData({
+        data: wordListString,  // 设置拼接后的字符串
+        success: function() {
+          wx.showToast({
+            title: '已复制到剪贴板',
+            icon: 'success'
+          });
+        },
+        fail: function() {
+          wx.showToast({
+            title: '复制失败',
+            icon: 'none'
+          });
+        }
+      });
+    } else {
+      wx.showToast({
+        title: '单词列表为空',
+        icon: 'none'
+      });
+    }
   }
+
 });
