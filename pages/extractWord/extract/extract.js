@@ -1,10 +1,9 @@
-const request = require('../utils/request.js')
-const towxml = require('../../towxml/index.js')
+const request = require('../../utils/request.js')
 
 Page({
   data: {
-    resultMarkdown: {},
-    imageUrl: ''
+    imageUrl: '',
+    resultWordList: []
   },
 
   chooseImage() {
@@ -24,7 +23,7 @@ Page({
       title: '上传中',
     })
     var extension = filePath.split('.').pop();
-    request.get('/food/createTask?extension=' + extension)
+    request.get('/extract/createTask?extension=' + extension)
         .then(response => {
           this.getUploadCredentials(response.data, filePath)
         })
@@ -40,7 +39,6 @@ Page({
   },
 
   // 上传文件
-  // 阿里云小程序上传对象存储文档 https://help.aliyun.com/zh/oss/use-cases/wechat-applet-uploads-files-directly-to-oss
   uploadFile(data, credentials, filePath){
     wx.uploadFile({
       url: 'https://' + credentials.bucket + "." + credentials.endpoint,
@@ -74,7 +72,7 @@ Page({
   // 发起识别
   startTask(data){
     var taskId = data.id
-    request.get('/food/startTask?taskId=' + taskId)
+    request.get('/extract/startTask?taskId=' + taskId)
     .then(response => {
       this.loopResult(taskId)
     })
@@ -82,20 +80,28 @@ Page({
 
   // 轮询查询结果
   async loopResult(taskId) {
-    var food = {}
+    var task = {}
+
     for (let i = 0; i < 120; i++) {
-      if (food.status === 'finished') {
+      if (task.status === 'finished') {
         break;
       }
       wx.showLoading({
-        title: '识别中' +(i + 1),
+        title: '识别中 ' +(i + 1),
       })
-      const response = await request.get('/food/getById?taskId=' + taskId)
-      food = response.data
+      const response = await request.get('/extract/getById?taskId=' + taskId)
+      task = response.data
       await new Promise((resolve) => setTimeout(resolve, 1200))
     }
-    // 渲染markdown https://github.com/sbfkcel/towxml
-    this.setData({resultMarkdown: getApp().towxml(food.result, 'markdown')})
+
+    console.log(task.resultWordList)
+    this.setData({resultWordList: task.resultWordList})
+
     wx.hideLoading()
+    wx.showToast({
+      title: '提取完成',
+      icon: 'success',
+      duration: 2000
+    })
   }
 });

@@ -12,8 +12,6 @@ Page({
   requestWord(){
     request.get('/word/randomPick')
       .then(response => {
-        console.log(response)
-
         if (response.code === 0) {
           const wordData = response.data;
           this.setData({

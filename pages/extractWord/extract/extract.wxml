@@ -1,0 +1,2 @@
+<button class="button" bindtap="chooseImage">上传手写单词图片</button>
+<image src = '{{imageUrl}}'></image>

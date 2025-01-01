@@ -2,8 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/food/food",
-    "pages/me/me",
-    "pages/wordExplain/wordExplain"
+    "pages/wordExplain/wordExplain",
+    "pages/extractWord/home/home",
+    "pages/extractWord/extract/extract",
+    "pages/extractWord/wordBook/wordBook"
   ],
   "window": {
     "navigationBarTextStyle": "black",

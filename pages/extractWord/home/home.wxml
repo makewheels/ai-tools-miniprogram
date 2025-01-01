@@ -1,0 +1,6 @@
+<button class="button" bindtap="navigateToExtract">从手写照片提取</button>
+<button class="button" bindtap="navigateToWordBook">Review 单词本</button>
+
+<view>
+<text></text>
+</view>
