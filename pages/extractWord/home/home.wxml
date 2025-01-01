@@ -1,6 +1,13 @@
 <button class="button" bindtap="navigateToExtract">从手写照片提取</button>
 <button class="button" bindtap="navigateToWordBook">Review 单词本</button>
 
-<view>
-<text></text>
+<view class="container">
+  <view class="word-list">
+    <view wx:for="{{wordList}}" wx:key="id" class="word-item">
+      <view class="word">{{item.content}}</view>
+      <view class="meaning">{{item.meaningChinese}}</view>
+      <view class="divider"></view>
+    </view>
+  </view>
 </view>
+

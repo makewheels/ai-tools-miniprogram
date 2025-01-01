@@ -16,3 +16,42 @@
   justify-content: center; /* 垂直居中 */
   align-items: center; /* 水平居中 */
 }
+
+.container {
+  padding: 20px;
+}
+
+.word-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.word-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;  /* 使分隔线能够定位到每一项 */
+}
+
+.word {
+  font-size: 18px;  /* 增大字体 */
+  font-weight: bold;
+  width: 40%;  /* 占40%宽度 */
+}
+
+.meaning {
+  font-size: 16px;  /* 增大字体 */
+  color: #333;
+  width: 55%;  /* 占55%宽度 */
+}
+
+.divider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;  /* 设置为100%宽度，穿透整个容器 */
+  border-bottom: 1px solid #ddd;  /* 下边框形成分割线 */
+  z-index: -1;  /* 确保分割线在文本后面 */
+}

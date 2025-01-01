@@ -40,11 +40,15 @@
 
 /* 图片部分 */
 .word-image {
-  border-radius: 20rpx;
-  padding-top: 20rpx;
+  width: 600rpx; /* 设置宽度 */
+  height: 600rpx; /* 设置高度，确保为正方形 */
+  object-fit: cover; /* 确保图片保持比例填满容器 */
+  margin-left: 20rpx; /* 左边距 */
+  margin-right: 20rpx; /* 右边距 */
+  border-radius: 20rpx; /* 设置圆角 */
 }
 
-/* 换单词图片 */
+/* 换单词按钮 */
 .button {
   background-color: #6452ff; /* 设置按钮背景色为绿色 */
   color: white; /* 设置按钮文本颜色为白色 */
